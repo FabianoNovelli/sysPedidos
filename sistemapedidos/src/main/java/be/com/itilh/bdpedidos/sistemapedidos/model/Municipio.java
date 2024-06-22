@@ -22,33 +22,22 @@ import lombok.ToString;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-
 @Entity
-@Table(name="tb_municipios")
-
+@Table(name = "tb_municipios")
 public class Municipio {
-
     @Id
-    @SequenceGenerator(name = "seqMunicipio", sequenceName ="tb_municipios_id_seq", allocationSize = 1)   
+    @SequenceGenerator(name = "seqMunicipio", sequenceName = "tb_municipios_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seqMunicipio")
     private BigInteger id;
-    
-    @Column(name="tx_nome")
+
+    @Column(name = "tx_nome")
     private String nome;
 
-    @Column(name="bo_entrega")
+    @Column(name = "bo_entrega")
     private Boolean entrega;
 
     @ManyToOne
-    @JoinColumn(name="id_estado")
+    @JoinColumn(name = "id_estado")
     private Estado estado;
-
-
-
-
-    
-
-
-
 
 }
